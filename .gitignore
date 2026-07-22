@@ -18,6 +18,12 @@ composer.phar
 /coverage/
 .php-cs-fixer.cache
 
+# Jekyll docs (local build artifacts)
+/docs/_site/
+/docs/.jekyll-cache/
+/docs/Gemfile.lock
+/docs/vendor/
+
 # IDE / OS
 /.idea/
 /.vscode/

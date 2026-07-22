@@ -1,0 +1,21 @@
+title: Payment Gateway
+description: A unified abstraction for integrating multiple domestic and international payment gateways in Laravel.
+theme: jekyll-theme-cayman
+show_downloads: false
+
+# Project page lives at https://tamfuldev.github.io/payment-gateway/
+# baseurl must match the repo name so the theme's CSS/assets resolve correctly.
+url: https://tamfuldev.github.io
+baseurl: /payment-gateway
+
+# Rendered by GitHub Pages (Jekyll). Enable in repo Settings → Pages →
+# Source: "Deploy from a branch" → branch: develop (or master) → folder: /docs.
+
+github:
+  repository_url: https://github.com/tamfuldev/payment-gateway
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

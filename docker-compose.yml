@@ -3,6 +3,7 @@
 #   docker compose build
 #   docker compose run --rm app composer install
 #   docker compose run --rm app composer ci
+#   docker compose up docs        # preview the docs site at http://localhost:4000
 services:
   app:
     build:
@@ -15,5 +16,19 @@ services:
     # Keep it interactive when you exec a shell.
     tty: true
 
+  # Jekyll (GitHub Pages) docs preview — uses Ruby 3.3 so it never touches the host Ruby.
+  docs:
+    image: ruby:3.3
+    working_dir: /site/docs
+    volumes:
+      - .:/site
+      - docs-gems:/usr/local/bundle
+    ports:
+      - "4000:4000"
+    command: >
+      sh -c "bundle install &&
+             bundle exec jekyll serve --host 0.0.0.0 --baseurl '' --force_polling"
+
 volumes:
   composer-cache:
+  docs-gems:
