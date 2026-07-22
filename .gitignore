@@ -1,18 +1,30 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+# Dependencies
+/vendor/
+composer.phar
 
-# Other files and folders
-.settings/
+# Environment & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
+# Tooling caches
+/.phpunit.cache/
+.phpunit.result.cache
+/.phpstan.cache/
+/.pest.cache/
+/build/
+/coverage/
+.php-cs-fixer.cache
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+# IDE / OS
+/.idea/
+/.vscode/
+*.swp
+.DS_Store
+
+# Claude Code
+.claude/settings.local.json
+.claude/
+CLAUDE.md
