@@ -1,0 +1,14 @@
+.git
+vendor
+node_modules
+.phpunit.cache
+.phpstan.cache
+.pest.cache
+coverage
+build
+.env
+.env.*
+!.env.example
+.idea
+.vscode
+.DS_Store

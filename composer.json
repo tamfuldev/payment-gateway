@@ -1,0 +1,103 @@
+{
+    "name": "tamfuldev/payment-gateway",
+    "description": "A unified abstraction for integrating multiple domestic and international payment gateways in Laravel (VNPay, MoMo, Stripe, PayPal, ...).",
+    "type": "library",
+    "keywords": ["laravel", "payment", "payment-gateway", "vnpay", "momo", "stripe", "vietnam"],
+    "license": "Apache-2.0",
+    "homepage": "https://github.com/tamfuldev/payment-gateway",
+    "authors": [
+        {
+            "name": "TamDevBackend",
+            "email": "ngoctam2303001@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/tamfuldev/payment-gateway/issues",
+        "source": "https://github.com/tamfuldev/payment-gateway"
+    },
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0|^12.0",
+        "illuminate/http": "^11.0|^12.0",
+        "illuminate/contracts": "^11.0|^12.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0|^10.0",
+        "pestphp/pest": "^3.0",
+        "pestphp/pest-plugin-laravel": "^3.0",
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.18"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tamfuldev\\Payment\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tamfuldev\\Payment\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "pest",
+        "test:coverage": "pest --coverage --min=90",
+        "analyse": "phpstan analyse",
+        "format": "pint",
+        "format:test": "pint --test",
+        "ci": [
+            "@format:test",
+            "@analyse",
+            "@test"
+        ]
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "archive": {
+        "exclude": [
+            "/vendor",
+            "/build",
+            "/coverage",
+            "/.git",
+            "/.github",
+            "/.claude",
+            "/.phpstan.cache",
+            "/.phpunit.cache",
+            "/.pest.cache",
+            "/.phpunit.result.cache",
+            "/.env",
+            "/tests",
+            "/docker",
+            "/docker-compose.yml",
+            "/Makefile",
+            "/phpstan.neon",
+            "/phpunit.xml",
+            "/pint.json",
+            "/.dockerignore",
+            "/.editorconfig",
+            "/.gitattributes",
+            "/.gitignore",
+            "/.env.example",
+            "/CLAUDE.md"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Tamfuldev\\Payment\\PaymentServiceProvider"
+            ],
+            "aliases": {
+                "Payment": "Tamfuldev\\Payment\\Facades\\Payment"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
